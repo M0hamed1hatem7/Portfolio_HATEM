@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohamed Hatem — Front-End Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0F1115; --surface:#171A1F; --line:#272B33;
+    --text:#E8E6DF; --muted:#8A8F99; --accent:#6EE7B7;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#F7F6F2; --surface:#FFFFFF; --line:#E3E1D9;
+      --text:#15181D; --muted:#6B6F78; --accent:#0E8F63;
+    }
+  }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px); scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:'Inter',-apple-system,sans-serif; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif; margin:0; letter-spacing:-0.01em;}
+  a{color:inherit;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+  header{padding:64px 0 24px; border-bottom:1px solid var(--line);}
+  nav{display:flex; justify-content:space-between; align-items:center; padding:20px 0;}
+  nav .mark{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:17px;}
+  nav .links a{margin-left:22px; text-decoration:none; color:var(--muted); font-size:14px;}
+  nav .links a:hover{color:var(--accent);}
+
+  .hero{padding:48px 0 72px;}
+  .hero .kicker{color:var(--accent); font-size:14px; font-weight:500; margin-bottom:14px;}
+  .hero h1{font-size:clamp(32px,6vw,52px); line-height:1.1; max-width:11ch;}
+  .hero p{max-width:46ch; color:var(--muted); font-size:17px; margin-top:18px;}
+  .hero .cta{display:inline-block; margin-top:28px; padding:12px 22px; background:var(--accent); color:#0F1115; text-decoration:none; font-weight:600; border-radius:3px; font-size:15px;}
+
+  section{padding:56px 0; border-bottom:1px solid var(--line);}
+  section h2{font-size:22px; margin-bottom:22px;}
+  section .lede{color:var(--muted); max-width:58ch; margin-bottom:24px;}
+
+  .skills{display:flex; flex-wrap:wrap; gap:10px;}
+  .skills span{border:1px solid var(--line); padding:7px 14px; border-radius:3px; font-size:14px; color:var(--text);}
+
+  .services{display:grid; gap:0;}
+  .service{display:grid; grid-template-columns:28px 1fr; gap:16px; padding:18px 0; border-top:1px solid var(--line);}
+  .service:first-child{border-top:none;}
+  .service .n{color:var(--accent); font-family:'Space Grotesk',sans-serif; font-size:14px;}
+  .service h3{font-size:16px; margin-bottom:4px;}
+  .service p{color:var(--muted); font-size:14.5px; margin:0;}
+
+  .window{border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--surface);}
+  .window .bar{display:flex; gap:6px; padding:10px 14px; border-bottom:1px solid var(--line);}
+  .window .bar i{width:9px; height:9px; border-radius:50%; background:var(--line); display:block;}
+  .window .body{padding:24px 22px; color:var(--text); font-size:14.5px;}
+  .window .body p{color:var(--muted); margin:0 0 16px;}
+  .window .body h3{font-size:17px; margin-bottom:6px;}
+  .tags{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;}
+  .tags span{font-size:12.5px; color:var(--muted); border:1px solid var(--line); padding:4px 10px; border-radius:3px;}
+  .window .body a.repo{font-size:14px; color:var(--accent); text-decoration:none; font-weight:500;}
+  .window .body a.repo:hover{text-decoration:underline;}
+
+  .exp-item{padding:18px 0; border-top:1px solid var(--line);}
+  .exp-item:first-child{border-top:none;}
+  .exp-item .role{font-weight:600; font-size:15px;}
+  .exp-item .meta{color:var(--muted); font-size:13.5px; margin-top:2px;}
+
+  footer{padding:56px 0 80px;}
+  footer h2{font-size:26px; max-width:14ch;}
+  footer p{color:var(--muted); margin-top:12px;}
+  footer .contact{margin-top:26px; display:flex; flex-wrap:wrap; gap:14px;}
+  footer .contact a{border:1px solid var(--line); padding:10px 18px; border-radius:3px; text-decoration:none; font-size:14px;}
+  footer .contact a:hover{border-color:var(--accent); color:var(--accent);}
+  footer .fine{margin-top:48px; color:var(--muted); font-size:12.5px;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav>
+    <div class="mark">Mohamed Hatem</div>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="about" style="border-bottom:none;">
+    <div class="kicker">Front-End Developer · Computer Science @ Nile University</div>
+    <h1>I build clear, responsive interfaces with React.</h1>
+    <p>I'm a Computer Science student at Nile University focused on front-end development. I build responsive, maintainable web apps with JavaScript and React, and I stay in touch throughout a project so nothing is a surprise.</p>
+    <a class="cta" href="#contact">Get in touch</a>
+  </section>
+</div>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>HTML5</span>
+      <span>CSS3</span>
+      <span>JavaScript (ES6+)</span>
+      <span>React</span>
+      <span>React Router</span>
+      <span>Tailwind CSS</span>
+      <span>Bootstrap</span>
+      <span>REST API integration</span>
+      <span>Git &amp; GitHub</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What I offer</h2>
+    <p class="lede">Work I can take on for startups and small teams.</p>
+    <div class="services">
+      <div class="service"><div class="n">01</div><div><h3>Landing &amp; marketing pages</h3><p>Responsive, clear pages that make a strong first impression.</p></div></div>
+      <div class="service"><div class="n">02</div><div><h3>Web app front ends</h3><p>Reusable React components with routing, controlled forms and API data.</p></div></div>
+      <div class="service"><div class="n">03</div><div><h3>Responsive fixes</h3><p>Making existing pages work properly on phones, tablets and desktops.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="window">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="body">
+        <h3>Notes App</h3>
+        <p>A CRUD notes app with a Bootstrap front end talking to a local JSON API. Users can add notes through a form and remove them instantly from the table, with the UI re-rendering from fresh data on every change.</p>
+        <div class="tags">
+          <span>HTML</span><span>CSS</span><span>Bootstrap</span><span>JavaScript</span><span>Fetch API</span>
+        </div>
+        <a class="repo" href="https://github.com/M0hamed1hatem7" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+      </div>
+    </div>
+    <div class="window" style="margin-top:20px;">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="body">
+        <h3>MASRE Movies <span style="font-weight:400;color:var(--muted);font-size:13px;">(team project, in progress)</span></h3>
+        <p>A movie discovery platform with API-driven browsing, search, movie details and a watchlist. Built from reusable React components using a team GitHub workflow.</p>
+        <div class="tags"><span>React</span><span>JavaScript</span><span>REST API</span><span>Git &amp; GitHub</span></div>
+        <a class="repo" href="https://github.com/M0hamed1hatem7" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        
+      </div>
+    </div>
+    <div class="window" style="margin-top:20px;">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="body">
+        <h3>Parking Lot Management System</h3>
+        <p>A Java Swing desktop app to add, remove, search and track parked vehicles. It rejects duplicate plate numbers, handles invalid input and calculates fees by vehicle type.</p>
+        <div class="tags"><span>Java</span><span>Swing</span><span>OOP</span></div>
+        <a class="repo" href="https://github.com/M0hamed1hatem7" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Education &amp; activities</h2>
+    <div class="exp-item">
+      <div class="role">B.Sc. in Computer Science</div>
+      <div class="meta">Nile University, Cairo &middot; Expected 2028</div>
+    </div>
+    <div class="exp-item">
+      <div class="role">DEPI &mdash; Frontend Development track</div>
+      <div class="meta">In progress, nearing completion</div>
+    </div>
+    <div class="exp-item">
+      <div class="role">React.js 19: The Complete Guide for Beginners</div>
+      <div class="meta">Yehia Tech &middot; In progress</div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's build something.</h2>
+    <p>Open to internships, junior front-end roles and small freelance projects.</p>
+    <div class="contact">
+      <a href="mailto:m.hatem2241@nu.edu.eg">m.hatem2241@nu.edu.eg</a>
+      <a href="https://www.linkedin.com/in/M0hamed1hatem7" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/M0hamed1hatem7" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="fine">&copy; 2026 By Mohamed Hatem.</div>
+  </div>
+</footer>
+
+</body>
+</html>
